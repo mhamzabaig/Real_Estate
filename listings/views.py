@@ -26,7 +26,7 @@ def listing_create(request):
         form = ListingForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("/")
+            return redirect("/listings")
 
     
     
@@ -42,7 +42,7 @@ def listing_update(request,pk):
         form = ListingForm(request.POST,instance=listing)
         if form.is_valid():
             form.save()
-            return redirect("/")
+            return redirect("/listings")
 
     
     
