@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Listing
+from .forms import ListingForm
 # Create your views here.
 # CRUD + List will be our actions
 
@@ -16,3 +17,11 @@ def listing_retrieve(request,pk):
         'listing':listing
     }
     return render(request,'listing.html',context)
+
+
+def listing_create(request):
+    form = ListingForm()
+    context = {
+        'form':form
+    }
+    return render(request,"listing_create.html",context)
