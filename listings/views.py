@@ -9,3 +9,10 @@ def listing_list(request): # naming convention of view as "model_name"_"action_n
         'listings':listings
     }
     return render(request,'listings.html',context)
+
+def listing_retrieve(request,pk):
+    listing = Listing.objects.get(id=pk)
+    context = {
+        'listing':listing
+    }
+    return render(request,'listing.html',context)
